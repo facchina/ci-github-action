@@ -12,7 +12,7 @@ on:
 jobs:
 
   test:
-    name: run on ubuntu latest with node ${{ matrix.node_version }} version
+    name: run on ubuntu latest with go ${{ matrix.go_version }} version
     runs-on: ubuntu-latest
     strategy:
       matrix:
