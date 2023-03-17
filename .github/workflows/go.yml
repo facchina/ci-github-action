@@ -68,4 +68,4 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
           git grep -q "trechos de código" ${{ steps.changed-files-specific.outputs.all_changed_files }}
-          if: [ $? -eq 0 ] ; then echo testes de memory leak foram executados ; else echo testes de memory leak não foram executados ; fi
+          if [ $? -eq 0 ] ; then todos os arquivos tem o trecho buscado ; else echo algum arquivo nao tem o trecho buscado ; fi
