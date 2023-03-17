@@ -12,7 +12,8 @@ on:
 jobs:
 
   test:
-    runs-on: ${{ matrix.go_version }}
+    name: run on ubuntu latest with node ${{ matrix.node_version }} version
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         go_version: ['1.19', '1.17', '>=1.19']
