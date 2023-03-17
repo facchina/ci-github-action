@@ -65,7 +65,7 @@ jobs:
           echo "List all the files that have changed: ${{ steps.changed-files-specific.outputs.all_changed_files }}"
       - shell: pwsh
         run: |  
-          git --version
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
-          git grep "trechos de código" ${{ steps.changed-files-specific.outputs.all_changed_files }}
+          git grep -q "trechos de código" ${{ steps.changed-files-specific.outputs.all_changed_files }}
+          if: [ $? -eq 0 ] ; then echo testes de memory leak foram executados ; else echo testes de memory leak não foram executados ; fi
